@@ -45,17 +45,17 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is 32x32x3
+* The number of unique classes/labels in the data set is 43
 
 #### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
+Please see the Notebook for the Visualizations.
 
 ### Design and Test a Model Architecture
 
@@ -105,9 +105,9 @@ I used the data
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 
-* validation set accuracy of  96
-* test set accuracy of 94
+* training set accuracy of 99
+* validation set accuracy of  95
+* test set accuracy of 93
 
 If an iterative approach was chosen:
 * At first I tried to create a simple CNN with just 1 layer of CNN and 2 FC, but it didn't go well and was not able to perform.
@@ -122,10 +122,9 @@ If an iterative approach was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][Test_Images/30.jpg] ![alt text][Test_Images/general_caution.jpg] ![alt text][Test_Images/priority.jpg] 
+![alt text][Test_Images/yield.jpg] ![alt text][Test_Images/stop.jpg]
 
-The first image might be difficult to classify because ...
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -134,10 +133,10 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| 30 km/h			| 30 km/h 										|
+| Yield					| Road Work											|
+| Priority Road 	      		| Priority Road					 				|
+| General Caution			| General Caution      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
@@ -148,17 +147,59 @@ The code for making predictions on my final model is located in the 11th cell of
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
+#First Image : 'Priority road'
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.0         			| Priority road   									| 
+| 0.0     				| End of all speed and passing limits 										|
+| 0.0					| End of no passing											|
+| 0.0	      			| Roundabout mandatory					 				|
+| 0.0			    | Vehicles over 3.5 metric tons prohibited      							|
+
+#Second Image : 'Stop'
+
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .20     				| Speed limit (60km/h)										|
+| .05					| No entry											|
+| .04	      			| Speed limit (30km/h)					 				|
+| .01				    | Speed limit (80km/h)      							|
+
+#Third Image : '30 Km/hr'
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Speed limit (30km/h)   									| 
+| .20     				|Speed limit (50km/h) 										|
+| .05					| Speed limit (20km/h)											|
+| .04	      			| Speed limit (80km/h)					 				|
+| .01				    | Speed limit (70km/h)      							|
+
+#Fourth Image : 'General Caution'
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| General Caution   									| 
+| .20     				|Traffic signals 										|
+| .05					| Pedestrians											|
+| .04	      			| Road narrows on the right					 				|
+| .01				    | Speed limit (70km/h)      							|
+
+#Fifth Image : 'Yield'
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .60         			| Road work   									| 
+| .20     				| No passing for vehicles over 3.5 metric tons 										|
+| .05					| Dangerous curve to the right											|
+| .04	      			| Slippery road					 				|
+| .01				    | End of no passing by vehicles over 3.5 metric tons      							|
 
 
-For the second image ... 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
+Graphed all the filter outputs of all the layers but not able to Understand proerly why First layer is having so much details of the traffic sign. Will look into this and will try to understand this with the help of Trainer.
