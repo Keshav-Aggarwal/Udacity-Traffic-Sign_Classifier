@@ -122,11 +122,11 @@ If an iterative approach was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][Test_Images/30.jpg] 
-![alt text][Test_Images/general_caution.jpg] 
-![alt text][Test_Images/priority.jpg] 
-![alt text][Test_Images/yield.jpg] 
-![alt text][Test_Images/stop.jpg]
+![alt text][./Test_Images/30.jpg] 
+![alt text][./Test_Images/general_caution.jpg] 
+![alt text][./Test_Images/priority.jpg] 
+![alt text][./Test_Images/yield.jpg] 
+![alt text][./Test_Images/stop.jpg]
 
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
